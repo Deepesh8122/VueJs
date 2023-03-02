@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>
+        <h1 v-h_Size="'medium'">
             Login Form
         </h1>
         <div>

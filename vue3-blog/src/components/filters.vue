@@ -5,11 +5,18 @@
         </h1>
 
         <h3>
-            {{title}}
+            {{title }}
         </h3>
         <h3>
-            {{amount}}
+            $ {{amount }}
         </h3>
+        <h3>
+            INR {{amount2 }}
+        </h3>
+        <br />
+        <br />
+        <br />
+        <hr />
     </div>
 
 </template>
@@ -21,11 +28,9 @@ export default {
     data(){
         return{
             title: 'Deepesh k. Yogi',
-            number: 30,
-            amount: '$30'
+            amount2: 30,
+            amount: 50023
         }
     }
-    
-    
 }
 </script>

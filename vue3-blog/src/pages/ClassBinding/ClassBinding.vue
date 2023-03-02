@@ -6,7 +6,7 @@
 
 <script>
 export default {
-    name: 'classbinding',
+    name: 'classBinding',
     components: {
         
     }

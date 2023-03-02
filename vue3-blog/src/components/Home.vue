@@ -14,7 +14,7 @@
         name: 'HomeNew',
         props: {
             data: String,
-            msg: Number
+            msg: String
         }
     }
 </script>
