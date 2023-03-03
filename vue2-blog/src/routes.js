@@ -1,48 +1,52 @@
-import { createRouter} from "vue-router";
 
-import aboutPage from "./components/pages/about";
-import SettingsPage from './components/pages/Settings';
-import HomePage from './components/pages/home';
-import examplesPage from './components/pages/examples';
-import userList from './components/userList';
-import pageNotFound from './components/pages/404Page';
+import Vue from 'vue'
+import VueRouter from "vue-router";
 
-const routes = [
-  {
-    name: "About",
-    path: "/about",
-    component: aboutPage,
-  },
-  {
-    name: "home",
-    path: "/home",
-    component: HomePage,
-  },
-  {
-    name: "settings",
-    path: "/settings",
-    component: SettingsPage,
-  },
-  {
-    name: "vue-example",
-    path: "/vue-examples",
-    component: examplesPage,
-  },
-  {
-    name: "user",
-    path: "/user-list/:id",
-    component: userList,
-  },
-  {
-    name: "404",
-    path: "*",
-    component: pageNotFound,
-  },
+Vue.use(VueRouter)
+// import {  } from "vue-router";
+
+import Home from "./components/pages/home.vue";
+import about from "./components/pages/about.vue";
+import Settings from "./components/pages/Settings.vue";
+import examplesPage from "./components/pages/examples.vue";
+import pageNotFound from './components/pages/404Page.vue';
+import userList from './components/userList.vue';
+
+const routes= [
+    {
+        name: 'Home',
+        path: '/',
+        component: Home
+    },
+    {
+        name: 'About',
+        path: '/about',
+        component: about
+    },
+    {
+        name: 'Settings',
+        path: '/settings',
+        component: Settings
+    },
+    {
+        name: 'Vue_Example',
+        path: '/vue-examples',
+        component: examplesPage
+    },
+    {
+        name: '404',
+        path: '/',
+        component: pageNotFound
+    },
+    {
+        name: 'userList',
+        path: '/user/:id',
+        component: userList
+    },
 ];
 
-const router = createRouter({
-//   history: createWebHistory(),
-  routes,
+const router = new VueRouter({
+    routes
 });
 
 export default router;

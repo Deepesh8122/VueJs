@@ -4,21 +4,20 @@ import Vue from 'vue'
 import './plugins/bootstrap-vue'
 import App from './App.vue'
 
-// import router from './routes'
-
-
 Vue.config.productionTip = false
 
+import router from './routes'
 
-// Vue.filter('uCase',function(val) {
-//   return val.toUpperCase();
-// })
-// Vue.filter('dollerToINR',function(val){
-//   return val*70
-// })
-// Vue.filter('INRTodoller',function(val){
-//   return val/70
-// })
+
+Vue.filter('uCase',function(val) {
+  return val.toUpperCase();
+})
+Vue.filter('dollerToINR',function(val){
+  return val*70
+})
+Vue.filter('INRTodoller',function(val){
+  return val/70
+})
 
 Vue.directive('h_Size',{
   bind(el,binding){
@@ -46,7 +45,6 @@ Vue.directive('h_Size',{
 
 
 new Vue({
-  // router: router,
-  // vuetify,
+  router: router,
   render: h => h(App),
 }).$mount('#app')

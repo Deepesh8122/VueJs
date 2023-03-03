@@ -3,46 +3,38 @@
         <h2>
             {{ pageTitle }}
         </h2>
-
-        <p class="d-flex flex-column">
-            <route-link to="/user-list/1">
-                Deepesh
-            </route-link>
-        </p>
-
-        <p class="d-flex flex-column">
-            <route-link to="/user-list/2">
-                Yogi
-            </route-link>
-        </p>
-
-        <p class="d-flex flex-column">
-            <route-link to="/user-list/3">
-                Jonh
-            </route-link>
-        </p>
-            
-        <p class="d-flex flex-column">
-            <route-link to="/user-list/4">
-                Bruce
-            </route-link>
-        </p>
-        <!-- <router-view></router-view>  -->
-        <!-- <userListPage /> -->
+        <div class="">
+            <h4>
+            Dynamic Routers
+            </h4>
+        </div>
+        <ul class="list-unstyle d-flex flex-row align-items-center justify-content-center p-0 mx-auto">
+          <li class="px-2"> 
+            <router-link to="/user/1">User 1</router-link>
+          </li>
+          <li class="px-2"> 
+            <router-link to="/user/2">User 2</router-link>
+          </li>
+          <li class="px-2"> 
+            <router-link to="/user/3">User 3</router-link>
+          </li>
+          <li class="px-2"> 
+            <router-link to="/user/4">User 4</router-link>
+          </li>
+      </ul>
     </div>
 </template>
 
 <script>
 
-// import userListPage from '../userList.vue'
+
 export default {
     name: 'aboutPage',
     components: {
-        // userListPage
     },
     data() {
         return {
-            pageTitle: 'About page'
+            pageTitle: 'About page',
         }
     }
 }
