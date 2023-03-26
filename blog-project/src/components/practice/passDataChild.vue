@@ -4,24 +4,19 @@
             {{ pTitle }}
         </h2>
         <h3>
-           Pass Normal text: <code> {{ msg }} </code>
+           Pass normal text: <code>{{ msg }}</code>
         </h3>
         <h3>
-           Pass Normal Data: <code>{{ normalData }}</code>
+            Pass Name from Dynamic Data: <code>{{ PassContentDynamic }}</code>
         </h3>
         <h3>
-           Pass Normal Data in loop: 
-           <ul>
-            <li v-for="users in normalDataLoop" :key="users.id">
-                <code>{{ users }} </code>
-            </li>
-           </ul>
-        </h3>
-        <h3>
-           Pass Function: 
-           <button v-on:click="normalFunction('Getting Data from the parent component')">
-            Click Me
-           </button>
+            Pass Users List from the Parent
+            {{  }}
+            <p v-for="usersListname in usersList" :key="usersListname.name">
+                <code>Id = {{usersListname.mId}}</code> | 
+                <code>Name = {{usersListname.mName}}</code> | 
+                <code>email : <button v-on:click="getEmailAddress(usersListname.email)">Check Email Address</button> </code>
+            </p>
         </h3>
     </div>
 </template>
@@ -36,9 +31,10 @@ export default {
     },
     props:{
         msg: String,
-        normalData: String,
-        normalDataLoop: Array,
-        normalFunction: Function
-    }
+        PassContentDynamic: String,
+        usersList: Object,
+        getEmailAddress: Function
+    },
+    methods:{}
 }
 </script>

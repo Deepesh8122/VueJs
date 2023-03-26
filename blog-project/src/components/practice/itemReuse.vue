@@ -1,11 +1,12 @@
 <template>
+    <!-- {{ pTitle }} -->
     <div class="memebr-list">
-       <h3>
-           <p> Memebr ID: {{ data.mId }} <br /> Memebr Name: {{ data.mName }}</p>
-       </h3>
-       <button type="button" @click="getName(data.email)">
-        Get Email
-       </button>
+        Frient Id: {{getUserDetails.mId}} <br />
+        Frient Name: {{getUserDetails.mName}} <br />
+        <button v-on:click="getEmailAddress(getUserDetails.email)">
+            Email Address
+        </button>
+        
     </div>
 </template>
 
@@ -17,10 +18,11 @@ export default {
             pTitle: 'Welcome to the Reuseable Component',
         }
     },
-    props: {
-        data: Object,
-        getName: Function
+    props:{
+        getUserDetails: String,
+        getEmailAddress: Function
     }
+    
 }
 </script>
 

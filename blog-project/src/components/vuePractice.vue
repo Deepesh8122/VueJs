@@ -21,17 +21,27 @@
         <hr />
         <forLoop />
         <hr />
-        <passDataChild msg="Test 123" :normalData="PassDataChildCompo.normalData.uName" :normalDataLoop="PassDataChildCompo.usersList" :normalFunction="getData" />
+        <passDataChild
+            msg="Yes"
+            :PassContentDynamic="PassDataChildCompo.normalData.uName"
+            :usersList="reusableComponent.memebrDetails" 
+            :getEmailAddress="getMemberEmail" />
         <hr />
 
         <h2>
             Welcome to the Reuseable Component
         </h2>
+
         <ul>
-            <li v-for="member in reusableComponent.memebrDetails" :key="member.id">
-                <componentReuse :data="member" :getName="getMemberEmail"/>
+            <li v-for="frientsList in reusableComponent.memebrDetails" :key="frientsList.mId">
+                <componentReuse :getUserDetails="frientsList" :getEmailAddress="getMemberEmail" />
             </li>
         </ul>
+       
+
+        <hr />
+
+        <htmlBinding />
     </div>
     
 </template>
@@ -46,7 +56,8 @@ import getFormValue from './practice/getFormValue.vue';
 import ifElseCondition from './practice/ifElseCondition.vue';
 import forLoop from './practice/forLoop.vue';
 import passDataChild from './practice/passDataChild.vue';
-import componentReuse from './practice/itemReuse.vue'
+import componentReuse from './practice/itemReuse.vue';
+import htmlBinding from './practice/htmlBinding.vue';
 
 
 export default {
@@ -61,7 +72,8 @@ export default {
         ifElseCondition,
         forLoop,
         passDataChild,
-        componentReuse
+        componentReuse,
+        htmlBinding
     },
     data(){
         return {
@@ -79,7 +91,8 @@ export default {
                     {mName: 'Keli', mId: '03', email: 'Keli@gmail.com'},
                     {mName: 'Thomas', mId: '04', email: 'Thomas@gmail.com'},
                 ]
-            }
+            },
+            names: ['Deepesh','PHPDots', 'Jonh']
         }
     },
     methods: {
@@ -87,7 +100,7 @@ export default {
             alert(i);
         },
         getMemberEmail (mail){
-            alert(mail)
+            alert(mail);
         }
     }
 }
